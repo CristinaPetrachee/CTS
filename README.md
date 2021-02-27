@@ -1,2 +1,2 @@
 # CTS
-Seminare Calitate si Testare Software
+Seminare Calitate si Testare Software - grupa 1087
