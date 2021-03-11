@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InsufficientFundsException {
 		
 		Map<Person, Receivable> employees = new HashMap<>();
 		
@@ -38,6 +38,14 @@ public class Main {
 			} catch (InsufficientFundsException ex) {
 				System.out.println(ex.getMessage());
 			}
+		}
+		
+		System.out.println("\n\n");
+		
+		try {
+			b2.transfer(b3, 200);
+		} catch (InsufficientFundsException e) {
+			System.out.println(e.getMessage());
 		}
 
 	}
