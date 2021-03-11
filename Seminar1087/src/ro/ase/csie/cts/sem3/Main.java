@@ -7,16 +7,25 @@ public class Main {
 
 	public static void main(String[] args) throws InsufficientFundsException {
 		
+		NotificationService smsService = new SMSNotificationService();
+		NotificationService emailService = new EmailNotificationService();
+		
 		Map<Person, Receivable> employees = new HashMap<>();
 		
 		Person p1 = new Person("Chuck Norris");
-		CreditBankAccount b1 = new CreditBankAccount("RFZ123123123", p1);
+		p1.setEmail("chuck@norris.com");
+		p1.setMobile("+40712452289");
+		CreditBankAccount b1 = new CreditBankAccount(smsService, "RFZ123123123", p1, -500);
 		
 		Person p2 = new Person("Arnold");
-		DebitBankAccount b2 = new FeeBankAccount("INGB123123123", p2);
+		p2.setEmail("arnold@arnold.com");
+		p2.setMobile("+3453454230423");
+		DebitBankAccount b2 = new FeeBankAccount(emailService, "INGB123123123", p2);
 		
 		Person p3 = new Person("Van Damme");
-		DebitBankAccount b3 = new DebitBankAccount("BT123123123", p3);
+		p3.setEmail("van@damme.com");
+		p3.setMobile("+4765223087");
+		DebitBankAccount b3 = new DebitBankAccount(emailService, "BT123123123", p3);
 		
 		employees.put(p1, b1);
 		employees.put(p2, b2);
