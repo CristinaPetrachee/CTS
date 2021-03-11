@@ -10,7 +10,7 @@ public class Main {
 		Map<Person, Receivable> employees = new HashMap<>();
 		
 		Person p1 = new Person("Chuck Norris");
-		CreditBankAccount b1 = new CreditBankAccount("RFZ123123123", p1, -500);
+		CreditBankAccount b1 = new CreditBankAccount("RFZ123123123", p1);
 		
 		Person p2 = new Person("Arnold");
 		DebitBankAccount b2 = new FeeBankAccount("INGB123123123", p2);
