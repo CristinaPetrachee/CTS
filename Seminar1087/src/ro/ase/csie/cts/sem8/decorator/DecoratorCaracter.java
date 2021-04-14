@@ -2,7 +2,7 @@ package ro.ase.csie.cts.sem8.decorator;
 
 import ro.ase.csie.cts.sem8.adapter.ACMECaracterJoc;
 
-public class DecoratorCaracter extends ACMECaracterJoc {
+public abstract class DecoratorCaracter extends ACMECaracterJoc {
 
 	ACMECaracterJoc caracter = null;
 
